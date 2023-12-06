@@ -5,7 +5,7 @@ class LogingView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("HOME"),
+      appBar: AppBar(title: Text("Loging"),
         centerTitle: true,
         shadowColor: Colors.red[300],
         backgroundColor: Colors.deepOrange[100],),
