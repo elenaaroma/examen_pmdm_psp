@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class ButtonCustom extends StatelessWidget{
@@ -21,7 +21,6 @@ class ButtonCustom extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    //return TextButton(onPressed: () => event!(), child: Text(sText));
     return  ElevatedButton(
       onPressed: () => event!(),
       style: ElevatedButton.styleFrom(
