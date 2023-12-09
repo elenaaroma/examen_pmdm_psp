@@ -2,7 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../CustomViews/BottomMenu.dart';
 import '../CustomViews/PostCellView.dart';
+import '../CustomViews/PostGridCellView.dart';
 import '../FirestoreObjects/FbPost.dart';
 import '../Singletone/DataHolder.dart';
 
@@ -16,6 +18,19 @@ class _HomeViewState extends State<HomeView> {
 
   FirebaseFirestore db = FirebaseFirestore.instance;
   final List<FbPost> posts = [];
+  bool bIsList = false;
+
+  void onBottomMenuPressed(int indice) {
+    // TODO: implement onBottomMenuPressed
+
+    setState(() {
+      if (indice == 1){
+        bIsList = false;
+      }else if(indice == 0){
+        bIsList = true;
+      }
+    });
+  }
 
   @override
   void initState() {
@@ -77,6 +92,24 @@ class _HomeViewState extends State<HomeView> {
 
   }
 
+  Widget? celdasOLista (bool isList){
+
+    if(bIsList){
+      return ListView.separated(
+        padding: EdgeInsets.all(50),
+        itemCount: posts.length,
+        itemBuilder: creadorDeItemLista,
+        separatorBuilder: creadorDeSeparadorLista,
+      );
+    }else{
+      return  GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+          itemCount: posts.length,
+          itemBuilder: creadorDeItemMatriz
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,13 +118,9 @@ class _HomeViewState extends State<HomeView> {
         shadowColor: Colors.green[400],
         backgroundColor: Colors.green[200],),
       body: Center(
-          child: ListView.separated(
-            padding: EdgeInsets.all(50),
-            itemCount: posts.length,
-            itemBuilder: creadorDeItemLista,
-            separatorBuilder: creadorDeSeparadorLista,
-          )
+          child: celdasOLista(bIsList)
       ) ,
+      bottomNavigationBar: BottomMenu(onBotonesClicked: onBottomMenuPressed),
     );
   }
 }

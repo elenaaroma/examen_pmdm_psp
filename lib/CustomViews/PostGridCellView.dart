@@ -32,7 +32,7 @@ class PostGridCellView extends StatelessWidget{
           color: Colors.amber[iColorCode],
           child: Row(
             children: [
-             Image.asset(DataHolder().plAdmin.getImage("gatete.jpg"),width: 70,height: 70),
+
               //Text(sText,style: TextStyle(fontSize: dFontSize)),
               Expanded(child: Text(sText, style: TextStyle (fontSize: dFontSize),
                 textAlign: TextAlign.start,
