@@ -49,6 +49,16 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
+  Widget? creadorDeItemMatriz (BuildContext context , int index){
+    return PostGridCellView(sText: posts[index].titulo,
+        dFontSize: 20,
+        iColorCode: 0,
+        dHeigth : 200,
+        iPosicion: index,
+        onItemListClickedFun: onItemListClicked
+    );
+  }
+
   Widget creadorDeSeparadorLista (BuildContext context , int index){
     return Column(
       children: [
