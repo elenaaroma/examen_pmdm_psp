@@ -5,6 +5,7 @@ import 'package:examen_pmdm/OnBoarding/SplashView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Main/PostCreateView.dart';
 import 'Main/PostView.dart';
 import 'OnBoarding/AjustesView.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget{
       '/homeview' : (context) => HomeView(),
       '/ajustesview' : (context) => AjustesView(),
       '/postview' : (context) => PostView(),
+      '/postcreateview' : (context) => PostCreateView(),
     },
     initialRoute: '/splashview',
     debugShowCheckedModeBanner: false,

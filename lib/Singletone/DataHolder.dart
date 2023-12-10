@@ -32,7 +32,7 @@ class DataHolder{
 
   void insertPostEnFB(FbPost postNuevo){
 
-    CollectionReference<FbPost> postsRef = db.collection("Post").withConverter(
+    CollectionReference<FbPost> postsRef = db.collection("posts").withConverter(
         fromFirestore: FbPost.fromFirestore,
         toFirestore: (FbPost post, _) => post.toFirestore());
 

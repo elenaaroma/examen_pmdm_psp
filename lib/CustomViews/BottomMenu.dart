@@ -32,8 +32,8 @@ class BottomMenu extends StatelessWidget{
     return Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          TextButton(onPressed: () => onBotonesClicked!(0), child: Icon(Icons.list, color: Colors.red[300],),),
-          TextButton(onPressed: () => onBotonesClicked!(1), child: Icon(Icons.grid_view, color: Colors.red[300],),),
+          TextButton(onPressed: () => onBotonesClicked!(0), child: Icon(Icons.list, color: Colors.green[200],),),
+          TextButton(onPressed: () => onBotonesClicked!(1), child: Icon(Icons.grid_view, color: Colors.green[200],),),
         ]
     );
   }
