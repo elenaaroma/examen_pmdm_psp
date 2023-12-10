@@ -37,7 +37,6 @@ class _HomeViewState extends State<HomeView> {
   }
 
   void fHomeViewDrawerOnTap(int indice){
-    print("->>>>>>>>>>>>" + indice.toString());
     if (indice == 0){
       FirebaseAuth.instance.signOut();
       Navigator.of(context).pushAndRemoveUntil(

@@ -12,7 +12,7 @@ class DataHolder{
   FirebaseAdmin fbadmin = FirebaseAdmin();
   PlataformAdmin plAdmin = PlataformAdmin();
 
-  String sNombre ="Kyty";
+  String sNombre ="Post";
   late String sPostTitle;
   late FbPost selectedPost;
 
