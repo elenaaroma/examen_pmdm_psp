@@ -1,8 +1,11 @@
+import 'package:examen_pmdm/Main/HomeView.dart';
 import 'package:examen_pmdm/OnBoarding/LoginView.dart';
 import 'package:examen_pmdm/OnBoarding/RegistroView.dart';
 import 'package:examen_pmdm/OnBoarding/SplashView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'OnBoarding/AjustesView.dart';
 
 class MyApp extends StatelessWidget{
   @override
@@ -12,9 +15,11 @@ class MyApp extends StatelessWidget{
     materialApp = MaterialApp(
           title:"Examen PMDM_PSP",
     routes: {
-      '/loginview': (context)=> LogingView(),
+      '/loginview': (context)=> LoginView(),
       '/registergview': (context)=> RegistroView(),
       '/splashview' : (context) => SplashView(),
+      '/homeview' : (context) => HomeView(),
+      '/ajustesview' : (context) => AjustesView(),
     },
     initialRoute: '/splashview',
     debugShowCheckedModeBanner: false,

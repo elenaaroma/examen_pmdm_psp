@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../FirestoreObjects/FbUsuario.dart';
 
 
-class LogingView extends StatelessWidget{
+class LoginView extends StatelessWidget{
 
   late BuildContext _context;
 

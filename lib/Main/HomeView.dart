@@ -1,8 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:examen_pmdm/OnBoarding/AjustesView.dart';
+import 'package:examen_pmdm/OnBoarding/LoginView.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../CustomViews/BottomMenu.dart';
+import '../CustomViews/DrawerClass.dart';
 import '../CustomViews/PostCellView.dart';
 import '../CustomViews/PostGridCellView.dart';
 import '../FirestoreObjects/FbPost.dart';
@@ -30,6 +34,20 @@ class _HomeViewState extends State<HomeView> {
         bIsList = true;
       }
     });
+  }
+
+  void fHomeViewDrawerOnTap(int indice){
+    print("->>>>>>>>>>>>" + indice.toString());
+    if (indice == 0){
+      FirebaseAuth.instance.signOut();
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => LoginView()),
+          ModalRoute.withName('/logingview'));
+    } else if (indice == 1){
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => AjustesView()),
+          ModalRoute.withName('/ajustesview'));
+    }
   }
 
   @override
@@ -121,6 +139,7 @@ class _HomeViewState extends State<HomeView> {
           child: celdasOLista(bIsList)
       ) ,
       bottomNavigationBar: BottomMenu(onBotonesClicked: onBottomMenuPressed),
+      drawer: DrawerClass(onItemTap: fHomeViewDrawerOnTap,),
     );
   }
 }
